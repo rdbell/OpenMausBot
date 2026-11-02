@@ -61,7 +61,8 @@ describe("mascot facial feature colors", () => {
   it("keeps default inks when an override is reset or comes from an older profile", () => {
     expect(renderBot({ color: "chrome", mascotFaceColor: null })).toContain('stroke="#1E2833"');
     expect(renderBot({ mascotBody: "pumpkin" })).toContain('stroke="#0d0a10"');
-    expect(renderBot({})).toContain('stroke="#ffffff"');
+    // Polygon bodies wear the carved face in its dark ink unless overridden.
+    expect(renderBot({})).toContain('stroke="#0d0a10"');
   });
 
   it("does not paint features over an uploaded image", () => {
