@@ -1,5 +1,5 @@
-// Import first: it reads a Cloud home's secrets off the launcher's pipe before any module can start a process.
-import { BOOT_CLOUD_SECRETS } from "./cloud-secrets-boot.ts";
+// Import first: children name node by a path that outlives an upgrade, and a Cloud home's secrets are read off the launcher's pipe before any module can start a process.
+import "./stable-node-path.ts"; import { BOOT_CLOUD_SECRETS } from "./cloud-secrets-boot.ts";
 import { AsyncLocalStorage } from "node:async_hooks";
 import { createHash, randomBytes, randomUUID, timingSafeEqual } from "node:crypto";
 import { existsSync, realpathSync, rmSync } from "node:fs";
